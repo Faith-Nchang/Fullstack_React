@@ -40,3 +40,48 @@
 .read-the-docs {
   color: #888;
 }
+
+
+.App {
+  text-align: center; /* Centers the text within the App component */
+}
+
+.header {
+  margin-top: 2em; /* Adds space above the header */
+}
+
+.samosa {
+  height: 15em;      /* Sets the height of the image */
+  padding: 1.5em;    /* Adds padding around the image */
+  margin: 0 auto;    /* Centers the image horizontally */
+  display: block;     /* Ensures that the image is treated as a block element */
+}
+
+.container {
+  margin-top: 50px;
+  display: flex;
+}
+
+.upgrade {
+  border: 1px solid rgba(153, 153, 153, 0.497);
+  border-radius: 2px;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  margin-right: 25px;
+  width: 200px;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.3em 1em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  color:  rgba(255, 255, 255, 0.87);
+  cursor: pointer;
+  margin-top: 10px;
+}
