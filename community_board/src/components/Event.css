@@ -1,0 +1,60 @@
+/* Event Card Container */
+.event {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    width: 320px; /* Width of the card */
+    margin: 15px 30px;
+    height: 500px; /* Height of the card */
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    color: black;
+    overflow: hidden; /* Ensure child elements don’t overflow */
+}
+.event h3 {
+    margin: 0;
+    padding: 10px;
+    color: #FF5722;
+}
+
+/* Event Card Image */
+.event img {
+    width: 100%;
+    height: 300px; /* Height of the image */
+}
+
+/* Hover Effect */
+.event:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.event-content {
+    padding: 5px 10px;
+
+}
+
+button{
+    background-color: #03A9F4; /* Light Blue */
+  color: #FFFFFF; /* White text */
+  border-radius: 5px;
+  padding: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 2px;
+}
+button:hover {
+    background-color: #FF5722; /* Deep Orange */
+    padding: 15px 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    color: white; /* Deep Orange */
+}
