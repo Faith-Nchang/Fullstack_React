@@ -1,19 +1,17 @@
-import React, { useState } from 'react';
+// Card.jsx
+import React from 'react';
 import './Card.css'; // Add a CSS file for card styles
 
-const Card = ({ question, answer, image, level }) => {
-  const [isFlipped, setIsFlipped] = useState(false);
-
+const Card = ({ question, answer, image, level, isFlipped, setIsFlipped }) => {
   const handleFlip = () => {
-    setIsFlipped(!isFlipped);
+    setIsFlipped(!isFlipped); // Use the passed function to toggle flip state
   };
 
   return (
-    <div className={`card ${isFlipped ? 'flipped' : ''}`} onClick={handleFlip}>
+    <div className={`card ${isFlipped ? 'flipped' : ''} ${level}`} onClick={handleFlip}>
       <div className="card-inner">
         <div className="card-front">
           <h2>{question}</h2>
-          <p>Difficulty Level: {level}</p>
         </div>
         <div className="card-back">
           <h2>{answer}</h2>

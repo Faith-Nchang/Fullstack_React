@@ -1,4 +1,4 @@
-export const Questions = [
+const Questions = [
     // Arrays
     { 
       content: 'What is an Array?', 
@@ -200,3 +200,5 @@ export const Questions = [
     }
   ];
   
+
+  export default Questions;
