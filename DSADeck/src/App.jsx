@@ -1,35 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import Card from './components/card';
+import Button from './components/button';
+import Questions from './components/Questions';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [cardIndex, setCardIndex] = useState(0);
+  
+  const questionList = Questions; // Assuming Questions is an array of questions
+  const currentQuestion = questionList[cardIndex];
+
+  // Function to go to the next card
+  const nextCard = () => {
+    if (cardIndex < questionList.length - 1) {
+      setCardIndex(cardIndex + 1);
+    }
+  };
+
+  // Function to go to the previous card
+  const previousCard = () => {
+    if (cardIndex > 0) {
+      setCardIndex(cardIndex - 1);
+    }
+  };
 
   return (
     <>
+      <h1>Flashcard App</h1>
+      <Card content={currentQuestion.content} answer={currentQuestion.answer} level={currentQuestion.level} image={currentQuestion.image} />
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <Button onClick={previousCard} disabled={cardIndex === 0}>Previous</Button>
+        <Button onClick={nextCard} disabled={cardIndex === questionList.length - 1}>Next</Button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <p>Current Card: {cardIndex + 1} of {questionList.length}</p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,24 @@
+/* Card.css */
+.card {
+    padding: 16px;
+    border-radius: 8px;
+    color: black;
+    text-align: center;
+    margin: 10px 0;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Background color for each level */
+  .easy {
+    background-color: lightgreen;
+  }
+  
+  .medium {
+    background-color: lightyellow;
+  }
+  
+  .hard {
+    background-color: lightcoral;
+  }
+  
