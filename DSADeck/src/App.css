@@ -41,3 +41,25 @@ body {
 .get-started-button:hover {
   background-color: #e55c50; /* Darker color on hover */
 }
+
+
+.hero-container
+{
+  background-color: lightblue;
+  color: black;
+  padding: 2rem;
+
+  
+}
+
+
+/* Styling for the title span in the Welcome message */
+.title {
+  color: #4CAF50; /* A green color to make it stand out */
+  font-weight: bold; /* Bold font for emphasis */
+  font-size: 2.5rem; /* Adjust the size */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow for a pop effect */
+  letter-spacing: 1.5px; /* Adds some spacing between letters */
+  font-family: 'Roboto', sans-serif; /* Use a modern font */
+}
+
