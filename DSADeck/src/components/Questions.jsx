@@ -4,19 +4,19 @@ const Questions = [
       content: 'What is an Array?', 
       level: 'easy', 
       answer: 'An array is a data structure that stores a collection of elements, typically of the same type, in a contiguous block of memory.', 
-      image: 'https://miro.medium.com/v2/resize:fit:1200/format:webp/1*P3LgLR8VQiTi9ZOR9M0n7A.png' 
+      image: 'https://th.bing.com/th/id/OIP.ZvfHu993oWvhySL1C4giAwHaEK?rs=1&pid=ImgDetMain' 
     },
     { 
       content: 'What is a Multi-dimensional Array?', 
       level: 'medium', 
       answer: 'A multi-dimensional array is an array of arrays, allowing for the representation of more complex data structures like matrices.', 
-      image: 'https://www.geeksforgeeks.org/wp-content/uploads/multi-d-array.jpg' 
+      image: 'https://th.bing.com/th/id/OIP.crgLFHXpyvjkEIImvQSr5wHaEK?rs=1&pid=ImgDetMain' 
     },
     { 
       content: 'Explain the time complexity of accessing an element in an array.', 
       level: 'hard', 
       answer: 'Accessing an element in an array by index has a time complexity of O(1), as it directly calculates the memory address.', 
-      image: 'https://miro.medium.com/v2/resize:fit:1200/format:webp/1*-9SnSDW3dSnE7SY75Pi1dQ.png' 
+      image: 'https://th.bing.com/th/id/OIP.7cWIGpHTAKKtY9u_IaRGHQHaEK?rs=1&pid=ImgDetMain' 
     },
   
     // Strings
@@ -24,19 +24,19 @@ const Questions = [
       content: 'What is a String?', 
       level: 'easy', 
       answer: 'A string is a sequence of characters used to represent text data.', 
-      image: 'https://www.javatpoint.com/images/string-in-java.png' 
+      image: 'https://www.scientecheasy.com/wp-content/uploads/2023/01/python-strings.png' 
     },
     { 
       content: 'What is the difference between mutable and immutable strings?', 
       level: 'medium', 
       answer: 'Mutable strings can be changed after creation, while immutable strings cannot be modified and create a new instance instead.', 
-      image: 'https://www.geeksforgeeks.org/wp-content/uploads/immutable-1.png' 
+      image: 'https://miro.medium.com/v2/resize:fit:3340/0*yE5UmhyOrFyoGbwk.png' 
     },
     { 
       content: 'How do you concatenate two strings in JavaScript?', 
       level: 'hard', 
       answer: 'You can concatenate two strings in JavaScript using the + operator or the concat() method.', 
-      image: 'https://miro.medium.com/v2/resize:fit:1000/format:webp/1*5Tyh_sCWAGW_x08HQFlqGA.png' 
+      image: 'https://th.bing.com/th/id/OIP.ZbQT2AQDYhF_KIVkkPHGUQHaDZ?rs=1&pid=ImgDetMain' 
     },
   
     // Linked Lists
@@ -44,19 +44,19 @@ const Questions = [
       content: 'What is a Linked List?', 
       level: 'easy', 
       answer: 'A linked list is a linear data structure where each element (node) contains data and a reference to the next node in the sequence.', 
-      image: 'https://www.tutorialspoint.com/data_structures_algorithms/images/linked_list.jpg' 
+      image: 'https://www.simplilearn.com/ice9/free_resources_article_thumb/Linked-List-Soni/representation-of-linked-list.png' 
     },
     { 
       content: 'What is the difference between a Singly and Doubly Linked List?', 
       level: 'medium', 
       answer: 'A singly linked list has nodes containing a single reference to the next node, while a doubly linked list has nodes with references to both the next and previous nodes.', 
-      image: 'https://www.tutorialspoint.com/data_structures_algorithms/images/doubly_linked_list.jpg' 
+      image: 'https://study.com/cimages/multimages/16/doubly_vs_singly_linked_lists.png' 
     },
     { 
       content: 'How do you reverse a Linked List?', 
       level: 'hard', 
       answer: 'To reverse a linked list, iterate through the list and reverse the direction of the pointers, setting the previous node as the next node for each current node.', 
-      image: 'https://www.geeksforgeeks.org/wp-content/uploads/reverse.png' 
+      image: 'https://storage.googleapis.com/algodailyrandomassets/tutorials-optimized/reverse-a-linked-list-image-cover.png' 
     },
   
     // Stacks
@@ -64,19 +64,19 @@ const Questions = [
       content: 'What is a Stack?', 
       level: 'easy', 
       answer: 'A stack is a linear data structure that follows the Last In First Out (LIFO) principle, where the last element added is the first one to be removed.', 
-      image: 'https://www.javatpoint.com/images/stack.png' 
+      image: 'https://media.geeksforgeeks.org/wp-content/cdn-uploads/20221219100314/stack.drawio2.png' 
     },
     { 
       content: 'How do you implement a Stack using an Array?', 
       level: 'medium', 
       answer: 'A stack can be implemented using an array by keeping track of the top index and using array methods to push and pop elements.', 
-      image: 'https://www.tutorialspoint.com/data_structures_algorithms/images/stack_array.jpg' 
+      image: 'https://www.simplilearn.com/ice9/free_resources_article_thumb/Soni-Stack-Article/stack-implementation-using-array.png' 
     },
     { 
       content: 'What are some applications of Stacks?', 
       level: 'hard', 
       answer: 'Stacks are used in expression evaluation, backtracking algorithms, and to maintain the history of function calls.', 
-      image: 'https://www.geeksforgeeks.org/wp-content/uploads/stackapplications.png' 
+      image: 'https://image1.slideserve.com/2961713/applications-of-stack-l.jpg' 
     },
   
     // Queues
@@ -84,19 +84,19 @@ const Questions = [
       content: 'What is a Queue?', 
       level: 'easy', 
       answer: 'A queue is a linear data structure that follows the First In First Out (FIFO) principle, where the first element added is the first one to be removed.', 
-      image: 'https://www.javatpoint.com/images/queue.png' 
+      image: 'https://pyshark.com/wp-content/uploads/2022/04/Remove-elements-from-queue-in-Python-using-dequeue.png' 
     },
     { 
       content: 'What is a Circular Queue?', 
       level: 'medium', 
       answer: 'A circular queue is a linear data structure that connects the last position back to the first position, making efficient use of space.', 
-      image: 'https://www.tutorialspoint.com/data_structures_algorithms/images/circular_queue.jpg' 
+      image: 'https://static.javatpoint.com/ds/images/circular-queue.png' 
     },
     { 
       content: 'What is a Priority Queue?', 
       level: 'hard', 
       answer: 'A priority queue is an abstract data type that supports retrieval of the highest (or lowest) priority element first, rather than FIFO order.', 
-      image: 'https://www.geeksforgeeks.org/wp-content/uploads/priority-queue.png' 
+      image: 'https://d33wubrfki0l68.cloudfront.net/0927054f3255230e75b6ecd1b5bba9ceb3e8d3e9/fee48/static/dc8fe7b4bba83ff881497f51b25951a2/51aac/priority-queue-data-structure.jpg' 
     },
   
     // Hash Tables
