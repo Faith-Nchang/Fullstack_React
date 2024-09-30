@@ -104,19 +104,19 @@ const Questions = [
       content: 'What is a Hash Table?', 
       level: 'easy', 
       answer: 'A hash table is a data structure that implements an associative array abstract data type, storing key-value pairs for efficient data retrieval.', 
-      image: 'https://www.javatpoint.com/images/hash-table.png' 
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg/630px-Hash_table_3_1_1_0_1_0_0_SP.svg.png' 
     },
     { 
       content: 'What are hash functions?', 
       level: 'medium', 
       answer: 'A hash function is a function that converts input (or keys) into a fixed-size string of bytes, typically used in hash tables to access data.', 
-      image: 'https://www.geeksforgeeks.org/wp-content/uploads/hf.png' 
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg/630px-Hash_table_3_1_1_0_1_0_0_SP.svg.png' 
     },
     { 
       content: 'Explain collision resolution techniques in hash tables.', 
       level: 'hard', 
       answer: 'Collision resolution techniques include chaining (linking elements in a list) and open addressing (finding next available slot in the array).', 
-      image: 'https://www.geeksforgeeks.org/wp-content/uploads/hash_collapse.png' 
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg/630px-Hash_table_3_1_1_0_1_0_0_SP.svg.png' 
     },
   
     // Trees
@@ -124,19 +124,19 @@ const Questions = [
       content: 'What is a Binary Tree?', 
       level: 'easy', 
       answer: 'A binary tree is a tree data structure where each node has at most two children referred to as the left child and the right child.', 
-      image: 'https://www.javatpoint.com/images/binary-tree.png' 
+      image: 'chttps://miro.medium.com/v2/resize:fit:16000/1*CMGFtehu01ZEBgzHG71sMg.png' 
     },
     { 
       content: 'What is a Binary Search Tree (BST)?', 
       level: 'medium', 
       answer: 'A binary search tree is a binary tree where each node has a value greater than all nodes in its left subtree and less than all nodes in its right subtree.', 
-      image: 'https://www.geeksforgeeks.org/wp-content/uploads/bst.png' 
+      image: 'https://media.geeksforgeeks.org/wp-content/uploads/BST.png' 
     },
     { 
       content: 'What are AVL trees?', 
       level: 'hard', 
       answer: 'AVL trees are self-balancing binary search trees where the difference in heights between the left and right subtrees is at most one.', 
-      image: 'https://www.geeksforgeeks.org/wp-content/uploads/avl_tree.png' 
+      image: 'https://simpletechtalks.com/wp-content/uploads/2020/11/AVL_Tree_example.png' 
     },
   
     // Graphs
@@ -144,19 +144,19 @@ const Questions = [
       content: 'What is a Graph?', 
       level: 'easy', 
       answer: 'A graph is a collection of nodes (vertices) and edges connecting pairs of nodes, representing relationships between entities.', 
-      image: 'https://www.javatpoint.com/images/graph.png' 
+      image: 'https://www.simplilearn.com/ice9/free_resources_article_thumb/Graph%20Data%20Structure%20-%20Soni/unweighted-graph-representation-in-data-structure.png' 
     },
     { 
       content: 'Explain the difference between directed and undirected graphs.', 
       level: 'medium', 
       answer: 'In a directed graph, edges have a direction, indicating a one-way relationship, while in an undirected graph, edges represent two-way relationships.', 
-      image: 'https://www.geeksforgeeks.org/wp-content/uploads/undirected_directed_graph.png' 
+      image: 'https://res.cloudinary.com/dc0mjpwf8/image/upload/v1590066649/ArticleImages/Graph/Directed_Graph_tv1xlj.png' 
     },
     { 
       content: 'What are weighted graphs?', 
       level: 'hard', 
       answer: 'Weighted graphs are graphs where each edge has an associated weight or cost, often used to represent distances in shortest path algorithms.', 
-      image: 'https://www.geeksforgeeks.org/wp-content/uploads/weighted_graph.png' 
+      image: 'https://www.slideteam.net/media/catalog/product/cache/960x720/g/r/graph_theory_weighted_graph_Slide01.jpg' 
     },
   
     // Searching Algorithms
@@ -164,19 +164,19 @@ const Questions = [
       content: 'What is Linear Search?', 
       level: 'easy', 
       answer: 'Linear search is a searching algorithm that checks each element in a list sequentially until the desired element is found.', 
-      image: 'https://www.javatpoint.com/images/linear-search.png' 
+      image: 'https://media.geeksforgeeks.org/wp-content/cdn-uploads/Linear-Search.png' 
     },
     { 
       content: 'What is Binary Search?', 
       level: 'medium', 
       answer: 'Binary search is a searching algorithm that finds the position of a target value within a sorted array by repeatedly dividing the search interval in half.', 
-      image: 'https://www.geeksforgeeks.org/wp-content/uploads/binary-search.png' 
+      image: 'https://media.geeksforgeeks.org/wp-content/uploads/20230711134722/Binary-Search.png' 
     },
     { 
       content: 'What is the time complexity of Binary Search?', 
       level: 'hard', 
       answer: 'The time complexity of binary search is O(log n), as it divides the array into halves with each iteration.', 
-      image: 'https://www.geeksforgeeks.org/wp-content/uploads/binary-search-time-complexity.png' 
+      image: 'https://www.studytonight.com/data-structures/images/binary-search-tree-4.png' 
     },
   
     // Sorting Algorithms
@@ -184,20 +184,9 @@ const Questions = [
       content: 'What is Bubble Sort?', 
       level: 'easy', 
       answer: 'Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.', 
-      image: 'https://www.javatpoint.com/images/bubble-sort.png' 
+      image: 'https://i1.faceprep.in/Companies-1/bubble-sort-in-c-implementation.png' 
     },
-    { 
-      content: 'What is Merge Sort?', 
-      level: 'medium', 
-      answer: 'Merge sort is a divide-and-conquer algorithm that splits the array into halves, sorts them recursively, and merges the sorted halves back together.', 
-      image: 'https://www.geeksforgeeks.org/wp-content/uploads/merge-sort.png' 
-    },
-    { 
-      content: 'What is Quick Sort?', 
-      level: 'hard', 
-      answer: 'Quick sort is a sorting algorithm that uses a divide-and-conquer strategy to select a pivot element, partition the array, and sort recursively.', 
-      image: 'https://www.geeksforgeeks.org/wp-content/uploads/quick-sort.png' 
-    }
+    
   ];
   
 
