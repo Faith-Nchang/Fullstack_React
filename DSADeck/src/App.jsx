@@ -57,7 +57,7 @@ function App() {
                     <h1>Welcome to <span className="title">DSADeck</span></h1>
                     <h2>Learn Data Structures and Algorithms through interactive flashcards!</h2>
                    
-                    <h1>Total cards: {questionList.length}</h1>
+                    <h1 className="total">Total cards: {questionList.length}</h1>
                     <Card 
                       question={currentQuestion.content} 
                       answer={currentQuestion.answer} 

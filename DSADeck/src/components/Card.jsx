@@ -14,7 +14,7 @@ const Card = ({ question, answer, image, level, isFlipped, setIsFlipped }) => {
           <h2>{question}</h2>
         </div>
         <div className="card-back">
-          <h2>{answer}</h2>
+          <h4>{answer}</h4>
           {image && <img src={image} alt={answer} />}
         </div>
       </div>
