@@ -1,6 +1,6 @@
 import React, { Component, useEffect, useState } from "react";
 
-const RecipeChoices = ({ handleChange, label, choices, checked }) => {
+const RecipeChoices = ({ handleChange, label, choices, checked, currentVal }) => {
     return (
         <div className="radio-buttons">
         
