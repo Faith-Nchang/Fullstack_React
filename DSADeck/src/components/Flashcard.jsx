@@ -2,7 +2,7 @@
 import React from 'react';
 import './Card.css'; // Add a CSS file for card styles
 
-const Card = ({ question, answer, image, level, isFlipped, setIsFlipped }) => {
+const Flashcard = ({ question, answer, image, level, isFlipped, setIsFlipped }) => {
   const handleFlip = () => {
     setIsFlipped(!isFlipped); // Use the passed function to toggle flip state
   };
@@ -22,4 +22,4 @@ const Card = ({ question, answer, image, level, isFlipped, setIsFlipped }) => {
   );
 };
 
-export default Card;
+export default Flashcard;

@@ -70,3 +70,26 @@
     margin-top: 2px; /* Add some space above the image */
   }
   
+/* Default black border */
+.guess-input.default {
+  border: 2px solid black;
+}
+
+/* Blue border for correct answer */
+.guess-input.correct {
+  border: 2px solid blue;
+}
+
+/* Red border for wrong answer */
+.guess-input.wrong {
+  border: 2px solid red;
+}
+
+.guess-input {
+  padding: 8px;
+  margin: 10px 0;
+  font-size: 16px;
+  border-radius: 5px;
+  box-sizing: border-box;
+
+}
