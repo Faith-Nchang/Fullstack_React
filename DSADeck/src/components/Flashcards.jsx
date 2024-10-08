@@ -44,7 +44,7 @@ const Flashcards = () => {
     const userGuess = normalize(guess);
 
     // Allow minor typos or partial matches
-    const isCorrect = targetAnswer === userGuess || targetAnswer.includes(userGuess);
+    const isCorrect = targetAnswer === userGuess || targetAnswer.includes(userGuess) || userGuess.includes(targetAnswer);
 
     if (isCorrect) {
       setCorrect(true); // Set correct to true for blue border
@@ -58,7 +58,7 @@ const Flashcards = () => {
       setCurrentStreak(0); // Reset current streak on incorrect answer
     }
 
-    setGuess(''); // Clear the input after submission
+    // setGuess(''); // Clear the input after submission
   };
 
   // Function to mark the current card as mastered
