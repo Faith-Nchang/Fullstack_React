@@ -13,7 +13,8 @@ const RecipeChoices = ({ handleChange, label, choices, checked, currentVal }) =>
             className = "textbox"
             />
           
-          {choices &&
+          {choices && 
+          
             
             choices.map((choice) => (
                 <li key={choice}>
