@@ -1,8 +1,9 @@
  /* APP.CSS */
  #root {
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
+  color: white;
 }
 
 
@@ -10,11 +11,12 @@
 
 body {
   margin: 0; /* Remove default margin */
-  height: 100vh; /* Full height */
+  /* height: 100vh; Full height */
   display: flex; /* Flexbox for centering */
-  justify-content: start; /* Center horizontally */
+  /* justify-content: start; Center horizontally */
   align-items: center; /* Center vertically */
   background-color: black;
+
 }
 
 
