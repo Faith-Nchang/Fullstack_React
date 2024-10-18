@@ -1,0 +1,13 @@
+.card {
+    background-color: rgba(178, 203, 162, 0.5);
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 20px;
+    width: 300px;
+}
+
+.card h1 {
+    font-size: 2em;
+    margin: 0;
+    font-weight: 500;
+}
