@@ -1,7 +1,7 @@
 import React from 'react';
 import './Card.css';
 
-const Card = ({ name, stastics}) => { 
+const Card = ({ name, statistics}) => { 
 
     return (
         <div className="card">
@@ -9,7 +9,7 @@ const Card = ({ name, stastics}) => {
                 {name}
             </h2>
             <h1>
-                {stastics}
+                {statistics}
             </h1>
         </div>
     );
