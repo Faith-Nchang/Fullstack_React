@@ -128,7 +128,7 @@ function App() {
 
        
 
-        <div className='recipe-list'>
+        <div className='recipe-list' id="list">
         <div className="filters">
          
           <div className="filter-item">
