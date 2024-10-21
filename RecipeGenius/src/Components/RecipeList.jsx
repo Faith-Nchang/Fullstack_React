@@ -1,3 +1,5 @@
+import './RecipeList.css'; // Import RecipeList.css
+
 const RecipeList = ({ recipes }) => {
     return (
         <div className="list">

@@ -1,12 +1,20 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
   padding: 2rem;
 }
-
+body {
+  font-family: 'Roboto', sans-serif;
+  /* background-color: rgba(69, 131, 30, 0.5);; */
+  background-image: url('https://img.spoonacular.com/recipes/716406-312x231.jpg');
+  background-size: cover;
+  color: #333;
+  padding: 10px;
+}
 .statistics {
   display: flex;
   flex-wrap: wrap;
+  justify-self: space-between;
 }
 .search {
   display: flex;
@@ -14,7 +22,7 @@
   margin: 2rem 0;
 }
 .searchInput {
-  width: 90%;
+  width:100%;
   padding: 0.5rem;
   font-size: 1.5rem;
   border: 1px solid #ccc;
@@ -26,4 +34,33 @@
   justify-content: center;
   margin: 2rem 0;
   flex-wrap: wrap;
+ 
+}
+.recipe-list {
+ 
+
+  background-color: rgba(145, 174, 128, 0.7);
+  border-radius: 20px;
+  padding: 30px 20px;
+  font-size: large;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-around;
+  font-weight: bold;
+}
+.filter-item {
+  margin: 0 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.App {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main {
+  width: 83%;
 }

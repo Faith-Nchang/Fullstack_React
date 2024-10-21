@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import Card from './Components/Card';
 import RecipeList from './Components/RecipeList';
+import Sidebar from './Components/Sidebar';
+import './App.css';
+
 
 const API_KEY = import.meta.env.VITE_APP_API_KEY;
 const url = `https://api.spoonacular.com/recipes/complexSearch?query=food&addRecipeInformation=true&number=30&apiKey=${API_KEY}`;
 
-import './App.css';
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -39,40 +41,15 @@ function App() {
         // Set recipes and compute statistics
         setRecipes(simplifiedRecipes);
         setFilteredRecipes(simplifiedRecipes);
-        setTotalRecipes(simplifiedRecipes.length);
         computeStatistics(simplifiedRecipes);
       } catch (error) {
         console.error('Error fetching data:', error);
-      }
+      } 
     };
 
-    const computeStatistics = (recipes) => {
-      setAvgHealthScore(calculateAverageHealthScore(recipes));
-      setVeganDiets(countVegetarianDiets(recipes));
-      setAvgServings(calculateAverageServings(recipes));
-    };
+    
 
-    const calculateAverageHealthScore = (recipes) => {
-      if (recipes.length === 0) return 0;
-      const totalHealthScore = recipes.reduce((acc, recipe) => acc + recipe.healthScore, 0);
-      return totalHealthScore / recipes.length;
-    };
-
-    const countVegetarianDiets = (recipes) => {
-      return recipes.filter(recipe => recipe.vegetarian).length;
-    };
-
-    const calculateAverageServings = (recipes) => {
-      if (recipes.length === 0) return 0;
-      const totalServings = recipes.reduce((acc, recipe) => acc + recipe.servings, 0);
-      return totalServings / recipes.length;
-    };
-
-    getRecipes().catch((error) => {
-      console.error('Error in getRecipes:', error);
-      setRecipes([]);
-      setFilteredRecipes([]); 
-    });
+    getRecipes();
   }, []);
 
   const handleSearchChange = (e) => {
@@ -111,10 +88,37 @@ function App() {
     filterRecipes();
   }, [search, diet, healthScoreRange, recipes]);
 
+  const computeStatistics = (recipes) => {
+    setAvgHealthScore(calculateAverageHealthScore(recipes));
+    setVeganDiets(countVegetarianDiets(recipes));
+    setAvgServings(calculateAverageServings(recipes));
+    setTotalRecipes(recipes.length);
+  };
+
+  const calculateAverageHealthScore = (recipes) => {
+    if (recipes.length === 0) return 0;
+    const totalHealthScore = recipes.reduce((acc, recipe) => acc + recipe.healthScore, 0);
+    return totalHealthScore / recipes.length;
+  };
+
+  const countVegetarianDiets = (recipes) => {
+    return recipes.filter(recipe => recipe.vegetarian).length;
+  };
+
+  const calculateAverageServings = (recipes) => {
+    if (recipes.length === 0) return 0;
+    const totalServings = recipes.reduce((acc, recipe) => acc + recipe.servings, 0);
+    return totalServings / recipes.length;
+  };
+
   return (
     <>
       <div className="App">
-        <h1>Recipe Genius</h1>
+
+        <div>
+          <Sidebar />
+        </div>
+        <div className='main'>
         <div className="statistics">
           <Card name="Total Recipes" statistics={totalRecipes} />
           <Card name="Average Health Score" statistics={avgHealthScore.toFixed(2)} />
@@ -122,9 +126,11 @@ function App() {
           <Card name="Average Serving Count" statistics={avgServings.toFixed(2)} />
         </div>
 
-        <div className="filters">
-          <h2>Filters</h2>
+       
 
+        <div className='recipe-list'>
+        <div className="filters">
+         
           <div className="filter-item">
             <input
               type="text"
@@ -151,6 +157,7 @@ function App() {
           <div className="filter-item range-filter">
             <label>Health Score Range:</label>
             <div>
+
               <input
                 type="range"
                 min="0"
@@ -158,7 +165,7 @@ function App() {
                 value={healthScoreRange[0]}
                 onChange={(e) => setHealthScoreRange([+e.target.value, healthScoreRange[1]])}
               />
-              <span>{healthScoreRange[0]}</span>
+              <span>{healthScoreRange[0]} (min)</span>
             </div>
             <div>
               <input
@@ -168,7 +175,7 @@ function App() {
                 value={healthScoreRange[1]}
                 onChange={(e) => setHealthScoreRange([healthScoreRange[0], +e.target.value])}
               />
-              <span>{healthScoreRange[1]}</span>
+              <span>{healthScoreRange[1]} (max) </span>
             </div>
           </div>
         </div>
@@ -177,6 +184,8 @@ function App() {
           <RecipeList recipes={filteredRecipes} /> 
           : 
           <h1>No Recipes found</h1>}
+      </div>
+      </div>
       </div>
     </>
   );

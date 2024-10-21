@@ -1,2 +1,46 @@
+.recipeHeader {
+    font-size: 1.2em;
+    color: rgba(63, 141, 63);
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
 .list {
+    margin: 20px;
+    overflow-x: auto; /* Allows horizontal scrolling for smaller screens */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+
+
+.recipeHeader th {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 2px solid #ccc;
+    color: #333;
+}
+
+tbody tr {
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s;
+}
+
+tbody tr:hover {
+    background-color: rgb(63, 141, 63); /* Highlight on hover */
+    color: white;
+    font-weight: bold;
+}
+
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+td img {
+    border-radius: 10px; /* Rounded corners for images */
 }
