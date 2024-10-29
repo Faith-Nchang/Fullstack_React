@@ -1,4 +1,5 @@
 import './RecipeList.css'; // Import RecipeList.css
+import {Link } from 'react-router-dom'; // Import Link
 
 const RecipeList = ({ recipes }) => {
     return (
@@ -13,6 +14,7 @@ const RecipeList = ({ recipes }) => {
                     <th>Vegetarian</th>
                     <th>Time to Cook</th>
                     <th>Image</th>
+                    <th>Details</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,6 +28,9 @@ const RecipeList = ({ recipes }) => {
                         <td>{recipe.timeToCook}</td>
                         <td>
                             <img src={recipe.image} alt={recipe.title} style={{ width: '100px' }} />
+                        </td>
+                        <td>
+                            <Link to={`/recipe/${recipe.id}`}>View Details</Link>
                         </td>
                     </tr>
                 ))}

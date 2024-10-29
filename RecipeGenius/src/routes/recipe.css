@@ -1,0 +1,13 @@
+.container-sec {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .main-sec {
+    width: 83%;
+    background-color: rgba(145, 174, 128, 0.5);
+    border-radius: 30px;
+    padding: 50px;
+    margin-left: 240px;
+  }
+  

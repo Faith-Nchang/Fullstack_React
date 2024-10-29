@@ -3,11 +3,10 @@ import Card from './Components/Card';
 import RecipeList from './Components/RecipeList';
 import Sidebar from './Components/Sidebar';
 import './App.css';
-
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, BarChart, Bar, Legend, PieChart, Pie } from 'recharts';
 
 const API_KEY = import.meta.env.VITE_APP_API_KEY;
 const url = `https://api.spoonacular.com/recipes/complexSearch?query=food&addRecipeInformation=true&number=30&apiKey=${API_KEY}`;
-
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -35,19 +34,17 @@ function App() {
           pricePerServing: recipe.pricePerServing,
           image: recipe.image,
           vegetarian: recipe.vegetarian,
-          timeToCook: `${recipe.readyInMinutes} minutes`
+          timeToCook: `${recipe.readyInMinutes} minutes`,
+          id: recipe.id
         }));
 
-        // Set recipes and compute statistics
         setRecipes(simplifiedRecipes);
         setFilteredRecipes(simplifiedRecipes);
         computeStatistics(simplifiedRecipes);
       } catch (error) {
         console.error('Error fetching data:', error);
-      } 
+      }
     };
-
-    
 
     getRecipes();
   }, []);
@@ -61,28 +58,25 @@ function App() {
     const filterRecipes = () => {
       let updatedRecipes = recipes;
 
-      // Title search
       if (search) {
         updatedRecipes = updatedRecipes.filter(recipe =>
           recipe.title.toLowerCase().includes(search.toLowerCase())
         );
       }
 
-      // Dietary filter
       if (diet !== 'all') {
         updatedRecipes = updatedRecipes.filter(recipe =>
           diet === 'vegetarian' ? recipe.vegetarian : !recipe.vegetarian
         );
       }
 
-      // Health score range filter
       updatedRecipes = updatedRecipes.filter(recipe =>
         recipe.healthScore >= healthScoreRange[0] &&
         recipe.healthScore <= healthScoreRange[1]
       );
 
       setFilteredRecipes(updatedRecipes);
-      computeStatistics(updatedRecipes); // Move this after filtering
+      computeStatistics(updatedRecipes);
     };
 
     filterRecipes();
@@ -112,82 +106,124 @@ function App() {
   };
 
   return (
-    <>
-      <div className="App">
-
-        <div>
-          <Sidebar />
-        </div>
-        <div className='main'>
+    <div className="App">
+      <div>
+        <Sidebar />
+      </div>
+      <div className='main'>
         <div className="statistics">
           <Card name="Total Recipes" statistics={totalRecipes} />
           <Card name="Average Health Score" statistics={avgHealthScore.toFixed(2)} />
           <Card name="Total Vegetarian Diets" statistics={veganDiets} />
           <Card name="Average Serving Count" statistics={avgServings.toFixed(2)} />
         </div>
-
-       
-
-        <div className='recipe-list' id="list">
-        <div className="filters">
-         
-          <div className="filter-item">
-            <input
-              type="text"
-              placeholder="Search by title"
-              value={search}
-              onChange={handleSearchChange}
-              className="searchInput"
-            />
+        <div className='outer'>
+          <div className='recipe-list' id="list">
+            <div className="filters">
+              <div className="filter-item">
+                <input
+                  type="text"
+                  placeholder="Search by title"
+                  value={search}
+                  onChange={handleSearchChange}
+                  className="searchInput"
+                />
+              </div>
+              <div className="filter-item">
+                <label htmlFor="diet-select">Dietary Preference:</label>
+                <select
+                  id="diet-select"
+                  onChange={(e) => setDiet(e.target.value)}
+                  value={diet}
+                >
+                  <option value="all">All</option>
+                  <option value="vegetarian">Vegetarian</option>
+                  <option value="non-vegetarian">Non-Vegetarian</option>
+                </select>
+              </div>
+              <div className="filter-item range-filter">
+                <label>Health Score Range:</label>
+                <div>
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value={healthScoreRange[0]}
+                    onChange={(e) => setHealthScoreRange([+e.target.value, healthScoreRange[1]])}
+                  />
+                  <span>{healthScoreRange[0]} (min)</span>
+                </div>
+                <div>
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value={healthScoreRange[1]}
+                    onChange={(e) => setHealthScoreRange([healthScoreRange[0], +e.target.value])}
+                  />
+                  <span>{healthScoreRange[1]} (max) </span>
+                </div>
+              </div>
+            </div>
+            {filteredRecipes.length > 0 ? 
+              <RecipeList recipes={filteredRecipes} /> 
+              : 
+              <h1>No Recipes found</h1>}
           </div>
+          <div className='visualizations'>
+            <h1>Visualizations</h1>
 
-          <div className="filter-item">
-            <label htmlFor="diet-select">Dietary Preference:</label>
-            <select
-              id="diet-select"
-              onChange={(e) => setDiet(e.target.value)}
-              value={diet}
+            <h2>Recipe vs Health score</h2>
+            <LineChart width={400} height={400} data={filteredRecipes} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+              <Line type="monotone" dataKey="healthScore" stroke="#ff7300" />
+              <CartesianGrid stroke="green" strokeDasharray="5 5" />
+              <XAxis dataKey="title" tick={{ fill: 'white' }} />
+              <YAxis tick={{ fill: 'white' }} />
+              <Tooltip />
+            </LineChart>
+            <p>This graph displays the health scores of the recipes based on their titles. It helps to understand the nutritional value of the recipes at a glance.</p>
+
+            <h2>Servings and time to cook</h2>
+            <BarChart
+              width={400}
+              height={400}
+              data={filteredRecipes}
+              margin={{
+                top: 20,
+                right: 30,
+                left: 20,
+                bottom: 5,
+              }}
             >
-              <option value="all">All</option>
-              <option value="vegetarian">Vegetarian</option>
-              <option value="non-vegetarian">Non-Vegetarian</option>
-            </select>
-          </div>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="title" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Bar dataKey="timeToCook" stackId="a" fill="blue" />
+              <Bar dataKey="servings" stackId="a" fill="#82ca9d" />
+            </BarChart>
+            <p>This bar chart illustrates the time required to cook each recipe alongside the number of servings. It assists users in planning their cooking based on time and portion sizes.</p>
 
-          <div className="filter-item range-filter">
-            <label>Health Score Range:</label>
-            <div>
-
-              <input
-                type="range"
-                min="0"
-                max="100"
-                value={healthScoreRange[0]}
-                onChange={(e) => setHealthScoreRange([+e.target.value, healthScoreRange[1]])}
+            <h2>Price per serving</h2>
+            <PieChart width={400} height={400}>
+              <Pie
+                data={filteredRecipes.map(recipe => ({ name: recipe.title, value: recipe.pricePerServing }))}
+                dataKey="value"
+                nameKey="name"
+                cx="50%"
+                cy="50%"
+                outerRadius={80}
+                fill="green"
+                label
               />
-              <span>{healthScoreRange[0]} (min)</span>
-            </div>
-            <div>
-              <input
-                type="range"
-                min="0"
-                max="100"
-                value={healthScoreRange[1]}
-                onChange={(e) => setHealthScoreRange([healthScoreRange[0], +e.target.value])}
-              />
-              <span>{healthScoreRange[1]} (max) </span>
-            </div>
+              <Tooltip />
+            </PieChart>
+            <p>This pie chart represents the price per serving for each recipe. It allows users to easily compare the cost of different recipes and make budget-friendly choices.</p>
           </div>
         </div>
-
-        {filteredRecipes.length > 0 ? 
-          <RecipeList recipes={filteredRecipes} /> 
-          : 
-          <h1>No Recipes found</h1>}
       </div>
-      </div>
-      </div>
-    </>
+    </div>
   );
 }
 
